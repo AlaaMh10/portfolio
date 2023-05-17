@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cube {
+    width: 200px;
+    height: 200px;
+    math-depth: 200px;
+    position: relative;
+    transform: rotateX(-45deg);
+    transform-origin: center;
+    box-shadow: 0 0 10px 0 #00000014;
+  }
+  
+  .cube div {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .cube div:nth-child(1) {
+    transform: rotateY(-45deg);
+  }
+  
+  .cube div:nth-child(2) {
+    transform: rotateZ(45deg);
+  }
+  
+  .cube div:nth-child(3) {
+    transform: rotateY(45deg);
+  }

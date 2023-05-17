@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Source Sans Pro", sans-serif;
+    @apply scroll-smooth;
+  }
+
+  h2 {
+    @apply mb-4 text-4xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-800 md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl text-gray-800 font-bold md:text-3xl;
+  }
+}
+
+
+.cube{
+  position:relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+
+  animation : animate 5s linear infinite 
+}
+
+@keyframes animate {
+ 0%{
+   transform:rotateX(-30deg) rotateY(0deg)
+ }
+ 100%{
+   transform:rotateX(-30deg) rotateY(360deg)
+ }
+}
+.cube div {
+
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+}
+.cube div span{
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#151515,#00ec00);
+  transform: rotateY(calc(90deg*var(--i))) translateZ(50px);
+  
+  }
+
+  .top {
+    position:absolute;
+    top:0;
+    left:0; 
+    width: 110px;
+    height: 110px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(50px);
+    
+  }
+  .top:before {
+    content: '';
+    position:absolute;
+    top:0;
+    left:0; 
+    width: 100px;
+    height: 100px;
+    background: #0f0;
+    transform: translateZ(-130px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0,255,0,0.2),0 0 200px rgba(0,255,0,0.2),
+    0 0 200px rgba(0,255,0,0.4),0 0 300px rgba(0,255,0,0.6)
+    ,0 0 400px rgba(0,255,0,0.8),
+    0 0 500px rgba(0,255,0,1);
+  }
+
+  
+
+@keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+@-webkit-keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+@-moz-keyframes move-background {    
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+    @-webkit-keyframes move-background {
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+.background-container{
+	position: fixed;
+	top: 0;
+	left:0;
+	bottom: 0;
+	right: 0;
+}
+
+#header{
+  position: relative;
+  z-index: 10;
+}
+#about{
+  position: relative;
+  z-index: 11;
+}
+#projects{
+  position: relative ;
+  z-index: 14;
+}
+
+#skills{
+  position: relative;
+  z-index: 13;
+}
+
+#contact{
+  position: relative;
+  z-index: 14;
+}
+#footer{
+  position: relative;
+  z-index: 10;
+}
+
+.stars {
+ background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+ position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+  	z-index: 0;
+}
+
+.twinkling{
+	width:10000px;
+	height: 100%;
+	background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+	background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    
+    -moz-animation:move-background 10s linear infinite;
+  -ms-animation:move-background 10s linear infinite;
+  -o-animation:move-background 10s linear infinite;
+  -webkit-animation:move-background 10s linear infinite;
+  animation:move-background 10s linear infinite;
+	
+}
+
+.clouds{
+	width:10000px;
+	height: 100%;
+	background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+	background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+
+   -moz-animation:move-background 20s linear infinite;
+  -ms-animation:move-background 20s linear infinite;
+  -o-animation:move-background 20s linear infinite;
+  -webkit-animation:move-background 20s linear infinite;
+  animation:move-background 20s linear infinite;
+}
+.img{
+  height: 70vh;
+  width:70vh;
+  position: absolute;
+  z-index: 5;
+  right: 20px;
+}
+
+/* .rap{
+  perspective: 1000px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rap1 {
+  width: 400px;
+  transform-style: preserve-3d;
+  transform: rotateX(50deg) rotateY(30deg);
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(10deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX(10deg) rotateY(0deg);
+  }
+}
+
+ */
+
